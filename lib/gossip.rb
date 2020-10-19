@@ -26,11 +26,12 @@ class Gossip
     self.all[id - 1]
   end
 
-  def self.update(id)
+  def self.update(author, content, id)
     all_gossips = self.all
-    all_gossips[id -1].author = gossip.author
-    all_gossips[id -1].content = gossip.content
+    all_gossips[id -1].author = author
+    all_gossips[id -1].content = content
     all_gossips_edit = all_gossips
+    CSV.open("./db/gossip.csv", "ab") { |csv| csv = "" }
     CSV.open("./db/gossip.csv", "ab") do |csv|
       csv << all_gossips_edit
     end

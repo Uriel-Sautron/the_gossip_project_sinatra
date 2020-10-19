@@ -14,9 +14,9 @@
       <%index = 0
       gossips.each_with_index do |gossip|%>
       <p>
-       <a href="/gossips/<%= index += 1%>/">Liens pour le potin <%= index %></a>
+       <a href="/gossips/<%= index += 1%>/">Potin <%= index %></a>
       </p>
       <% end %>
-
+      <p>Si tu veux nous partagez des Gossips c'est <a href="/gossips/new/">ici</a></p>
   </body>
 </html>
